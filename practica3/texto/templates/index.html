@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="LATIN-1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <h2>Texto que se enviara al servidor</h2>
+    <form action="/textopost/" method='post'>
+        {%csrf_token%}
+
+        <textarea name="text" id="" cols="30" rows="10"></textarea>
+        </textarea>
+        <br>
+        <input type="submit" value='Crear'>
+
+    </form>
+    <br>
+    <form action="/textoput/" method='post'>
+        {%csrf_token%}
+        <textarea name="text" id="" cols="30" rows="10"></textarea>
+        </textarea>
+        <br>
+        <input type="submit" value='Agregar'>
+    </form>
+    <br>
+    <form action="/textodelete/" method='post'>
+        {%csrf_token%}
+        
+        <input type="submit" value='Eliminar'>
+    </form>
+    <br>
+    <div>
+        <h2>Respuesta del servidor</h2>
+        <p>
+            {{texto}}
+        </p>
+    </div>
+
+</body>
+
+</html>
